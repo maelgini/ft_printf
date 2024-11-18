@@ -6,7 +6,7 @@
 /*   By: maelgini <maelgini@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/16 16:54:11 by maelgini          #+#    #+#             */
-/*   Updated: 2024/11/18 15:49:26 by maelgini         ###   ########.fr       */
+/*   Updated: 2024/11/18 17:12:56 by maelgini         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,15 +41,18 @@ int	ft_putnbr(int nb, int size)
 	return (size);
 }
 
-int	ft_unsigned_putnbr(unsigned int u)
+int	ft_unsigned_putnbr(unsigned int u, int size)
 {
+	size = 0;
+	
 	if (u > 9)
 	{
-		ft_unsigned_putnbr(u / 10);
+		size = ft_unsigned_putnbr(u / 10, size);
 		u %= 10;
 	}
 	ft_putchar(u + '0');
-	return (ft_strlen(ft_itoa(u)));
+	size++;
+	return (size);
 }
 
 int	ft_putstr(char *str)

@@ -6,20 +6,22 @@
 /*   By: maelgini <maelgini@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/16 17:34:08 by maelgini          #+#    #+#             */
-/*   Updated: 2024/11/18 14:47:16 by maelgini         ###   ########.fr       */
+/*   Updated: 2024/11/18 17:08:55 by maelgini         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libftprintf.h"
 
-int	ft_putnbr_hex(int n, char format)
+int	ft_putnbr_hex(int n, int size, char format)
 {
 	unsigned int	num;
 	char			*hex_digits;
-
+	
+	size = 0;
 	if (n < 0)
 	{
 		ft_putchar('-');
+		size = 0;
 		num = (unsigned int)(-n);
 	}
 	else
@@ -29,9 +31,10 @@ int	ft_putnbr_hex(int n, char format)
 	else
 		hex_digits = "0123456789ABCDEF";
 	if (num >= 16)
-		ft_putnbr_hex(num / 16, format);
+		size = ft_putnbr_hex(num / 16, size, format);
 	ft_putchar(hex_digits[num % 16]);
-	return (ft_strlen(ft_itoa(num)));
+	size++;
+	return (size);
 }
 
 int	ft_putstr_hex(void *ptr)

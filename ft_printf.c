@@ -6,7 +6,7 @@
 /*   By: maelgini <maelgini@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/14 12:33:40 by maelgini          #+#    #+#             */
-/*   Updated: 2024/11/18 15:48:19 by maelgini         ###   ########.fr       */
+/*   Updated: 2024/11/18 17:13:51 by maelgini         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,9 +32,9 @@ int	ft_format(va_list args, const char format)
 	if (format == 'd' || format == 'i')
 		print_len += ft_putnbr(va_arg(args, int), 0);
 	if (format == 'u')
-		print_len += ft_unsigned_putnbr(va_arg(args, unsigned int));
+		print_len += ft_unsigned_putnbr(va_arg(args, unsigned int), 0);
 	if (format == 'x' || format == 'X')
-		print_len += ft_putnbr_hex(va_arg(args, unsigned int), format);
+		print_len += ft_putnbr_hex(va_arg(args, unsigned int), 0, format);
 	if (format == '%')
 	{
 		print_len += 1;
