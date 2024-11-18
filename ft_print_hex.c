@@ -1,0 +1,62 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_print_hex.c                                     :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: maelgini <maelgini@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/11/16 17:34:08 by maelgini          #+#    #+#             */
+/*   Updated: 2024/11/18 14:47:16 by maelgini         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include "libftprintf.h"
+
+int	ft_putnbr_hex(int n, char format)
+{
+	unsigned int	num;
+	char			*hex_digits;
+
+	if (n < 0)
+	{
+		ft_putchar('-');
+		num = (unsigned int)(-n);
+	}
+	else
+		num = (unsigned int)n;
+	if (format == 'x')
+		hex_digits = "0123456789abcdef";
+	else
+		hex_digits = "0123456789ABCDEF";
+	if (num >= 16)
+		ft_putnbr_hex(num / 16, format);
+	ft_putchar(hex_digits[num % 16]);
+	return (ft_strlen(ft_itoa(num)));
+}
+
+int	ft_putstr_hex(void *ptr)
+{
+	unsigned long long	addr;
+	char				*hex;
+	int					len;
+	char				hex_str[16];
+	int					i;
+
+	addr = (unsigned long long)ptr;
+	hex = "0123456789abcdef";
+	len = 0;
+	i = 15;
+	len += write(1, "0x", 2);
+	if (addr == 0)
+	{
+		len += write(1, "0", 1);
+		return (len);
+	}
+	while (addr > 0)
+	{
+		hex_str[i--] = hex[addr % 16];
+		addr /= 16;
+	}
+	len += write(1, &hex_str[i + 1], 15 - i);
+	return (len);
+}

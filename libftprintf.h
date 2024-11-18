@@ -6,15 +6,25 @@
 /*   By: maelgini <maelgini@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/14 12:56:50 by maelgini          #+#    #+#             */
-/*   Updated: 2024/11/14 13:04:18 by maelgini         ###   ########.fr       */
+/*   Updated: 2024/11/18 15:48:05 by maelgini         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFTPRINTF_H
 # define LIBFTPRINTF_H
 
-#include "libft/libft.h"
-#include <stdarg.h>
-#include <unistd.h>
+# include "libft/libft.h"
+# include <stdarg.h>
+# include <unistd.h>
+
+void	ft_putchar(char c);
+int		ft_putnbr_hex(int n, char format);
+int		ft_putstr_hex(void *ptr);
+int		ft_format(va_list args, const char format);
+int		ft_char(char c);
+int		ft_printf(const char *format, ...);
+int		ft_putnbr(int nb, int size);
+int		ft_putstr(char *str);
+int		ft_unsigned_putnbr(unsigned int u);
 
 #endif
