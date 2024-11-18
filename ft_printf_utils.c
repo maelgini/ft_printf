@@ -6,11 +6,11 @@
 /*   By: maelgini <maelgini@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/16 16:54:11 by maelgini          #+#    #+#             */
-/*   Updated: 2024/11/18 17:12:56 by maelgini         ###   ########.fr       */
+/*   Updated: 2024/11/18 17:28:11 by maelgini         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libftprintf.h"
+#include "ft_printf.h"
 
 void	ft_putchar(char c)
 {

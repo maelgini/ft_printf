@@ -6,11 +6,11 @@
 /*   By: maelgini <maelgini@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/16 17:34:08 by maelgini          #+#    #+#             */
-/*   Updated: 2024/11/18 17:08:55 by maelgini         ###   ########.fr       */
+/*   Updated: 2024/11/18 17:28:04 by maelgini         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libftprintf.h"
+#include "ft_printf.h"
 
 int	ft_putnbr_hex(int n, int size, char format)
 {
