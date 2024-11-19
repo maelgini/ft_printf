@@ -6,7 +6,7 @@
 /*   By: maelgini <maelgini@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/14 12:56:50 by maelgini          #+#    #+#             */
-/*   Updated: 2024/11/18 17:27:55 by maelgini         ###   ########.fr       */
+/*   Updated: 2024/11/19 14:49:10 by maelgini         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 # include <unistd.h>
 
 void	ft_putchar(char c);
-int		ft_putnbr_hex(int n, int size, char format);
+int		ft_putnbr_hex(unsigned int n, int size, char format);
 int		ft_putstr_hex(void *ptr);
 int		ft_format(va_list args, const char format);
 int		ft_char(char c);

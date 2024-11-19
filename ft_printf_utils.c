@@ -6,7 +6,7 @@
 /*   By: maelgini <maelgini@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/16 16:54:11 by maelgini          #+#    #+#             */
-/*   Updated: 2024/11/18 17:28:11 by maelgini         ###   ########.fr       */
+/*   Updated: 2024/11/19 14:54:00 by maelgini         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,7 @@ void	ft_putchar(char c)
 int	ft_putnbr(int nb, int size)
 {
 	unsigned int	n;
-	
-	size = 0;
+
 	if (nb < 0)
 	{
 		ft_putchar('-');
@@ -37,14 +36,12 @@ int	ft_putnbr(int nb, int size)
 	}
 	ft_putchar(n + '0');
 	size++;
-	printf("%i ", size);
 	return (size);
 }
 
 int	ft_unsigned_putnbr(unsigned int u, int size)
 {
 	size = 0;
-	
 	if (u > 9)
 	{
 		size = ft_unsigned_putnbr(u / 10, size);
@@ -60,6 +57,11 @@ int	ft_putstr(char *str)
 	int	i;
 
 	i = 0;
+	if (str == NULL)
+	{
+		write (1, "(null)", 6);
+		return (6);
+	}
 	while (str[i])
 	{
 		write(1, &str[i], 1);
