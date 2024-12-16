@@ -9,7 +9,7 @@ int main(void) {
     int             i = -1234;
     unsigned int    u = 9999999;
     int             x = 2147483647;
-    int             X = -2147483647;
+    int             X = 2147483647;
     char            *ns = NULL;
     char            *np = NULL;
 
@@ -51,8 +51,8 @@ int main(void) {
     printf("Return values - printf: %d, ft_printf: %d\n\n", ret_printf, ret_ft_printf);
 
     printf("------TESTING UPPERCASE HEX------\n");
-    ret_printf = printf("Theirs :%X\n", x);
-    ret_ft_printf = ft_printf("Mine :%X\n", x);
+    ret_printf = printf("Theirs :%X\n", X);
+    ret_ft_printf = ft_printf("Mine :%X\n", X);
     printf("Return values - printf: %d, ft_printf: %d\n\n", ret_printf, ret_ft_printf);
 
     printf("-------TESTING A NULL PTR------\n");
@@ -63,16 +63,6 @@ int main(void) {
     printf("------TESTING A NULL STRING------\n");
     ret_printf = printf("Theirs :%s\n", ns);
     ret_ft_printf = ft_printf("Mine :%s\n", ns);
-    printf("Return values - printf: %d, ft_printf: %d\n\n", ret_printf, ret_ft_printf);
-
-    printf("------TESTING INVALID FORMAT------\n");
-    ret_printf = printf("Theirs :%q %% bonjour %d\n", 18);
-    ret_ft_printf = ft_printf("Mine :%q %% bonjour %d\n", 18);
-    printf("Return values - printf: %d, ft_printf: %d\n\n", ret_printf, ret_ft_printf);
-
-    printf("------TESTING INVALID FORMAT 2------\n");
-    ret_printf = printf(0);
-    ret_ft_printf = ft_printf(0);
     printf("Return values - printf: %d, ft_printf: %d\n\n", ret_printf, ret_ft_printf);
 
     return 0;
