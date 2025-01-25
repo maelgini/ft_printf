@@ -12,6 +12,7 @@ int main(void) {
     int             X = 2147483647;
     char            *ns = NULL;
     char            *np = NULL;
+    double          f = -42.123456;
 
     int ret_printf, ret_ft_printf;
 
@@ -63,6 +64,11 @@ int main(void) {
     printf("------TESTING A NULL STRING------\n");
     ret_printf = printf("Theirs :%s\n", ns);
     ret_ft_printf = ft_printf("Mine :%s\n", ns);
+    printf("Return values - printf: %d, ft_printf: %d\n\n", ret_printf, ret_ft_printf);
+
+    printf("------TESTING FLOAT------\n");
+    ret_printf = printf("Theirs :%f\n", f);
+    ret_ft_printf = ft_printf("Mine :%f\n", f);
     printf("Return values - printf: %d, ft_printf: %d\n\n", ret_printf, ret_ft_printf);
 
     return 0;
